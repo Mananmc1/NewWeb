@@ -1,0 +1,342 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Household Resource Sharing Hub
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1E40AF;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #3B82F6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .resource-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .resource-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 1rem);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .resource-item:hover {
+            transform: scale(1.05);
+        }
+        .resource-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .resource-item h3 {
+            margin: 0;
+            padding: 1rem;
+            background-color: #1E3A8A;
+            color: white;
+        }
+        .resource-item p {
+            padding: 1rem;
+        }
+        .footer {
+            background-color: #1E40AF;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="flex items-center justify-center h-screen bg-gray-100" id="login-page">
+   <div class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-bold mb-6 text-center">
+     Login
+    </h2>
+    <form id="login-form">
+     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+       Username
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" name="username" required="" type="text"/>
+     </div>
+     <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+       Password
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="password" required="" type="password"/>
+     </div>
+     <div class="flex items-center justify-between">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+       Login
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="hidden" id="main-content">
+   <header>
+    <h1>
+     Household Resource Sharing Hub
+    </h1>
+   </header>
+   <nav>
+    <a href="#home">
+     Home
+    </a>
+    <a href="#resources">
+     Resources
+    </a>
+    <a href="#add-resource">
+     Add Resource
+    </a>
+    <a href="#about">
+     About
+    </a>
+    <a href="#contact">
+     Contact
+    </a>
+   </nav>
+   <div class="container">
+    <section id="resources">
+     <h2 class="text-2xl font-bold mb-4">
+      Available Resources
+     </h2>
+     <div class="resource-list">
+      <div class="resource-item">
+       <img alt="Image of a lawnmower in a garden" height="400" src="https://storage.googleapis.com/a1aa/image/abiCHNei4tXTcCQWUe1HcUw3Z98NqqNNw4BzITEmDjXLtHyTA.jpg" width="600"/>
+       <h3>
+        Lawnmower
+       </h3>
+       <p>
+        High-quality lawnmower available for sharing. Perfect for keeping your garden neat and tidy.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a power drill on a workbench" height="400" src="https://storage.googleapis.com/a1aa/image/J4G5kM5y9s6rCpzOOByOy4dE5bU1hXX9FMKgkqMM1E0R7h8E.jpg" width="600"/>
+       <h3>
+        Power Drill
+       </h3>
+       <p>
+        Reliable power drill for all your DIY projects. Comes with a variety of drill bits.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a set of gardening tools including a trowel, pruners, and gloves" height="400" src="https://storage.googleapis.com/a1aa/image/uXq0YoESx9LVAZGfGfmLfdTheZdeec3r231ppCV9JNeIl2D5JA.jpg" width="600"/>
+       <h3>
+        Gardening Tools
+       </h3>
+       <p>
+        Complete set of gardening tools available for use. Includes trowel, pruners, and gloves.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a sewing machine on a table with fabric and threads" height="400" src="https://storage.googleapis.com/a1aa/image/K3F6nPF3j45FLRcn879xnakf0fhyO6LYMKAhYMOkHvONtHyTA.jpg" width="600"/>
+       <h3>
+        Sewing Machine
+       </h3>
+       <p>
+        High-performance sewing machine for all your sewing needs. Ideal for both beginners and experts.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a bicycle parked on a sidewalk" height="400" src="https://storage.googleapis.com/a1aa/image/3eXdb3kVeLt3BEOnlDBV3HpqM7dyWyuclaqE2ZSy4e2LaPknA.jpg" width="600"/>
+       <h3>
+        Bicycle
+       </h3>
+       <p>
+        Well-maintained bicycle available for sharing. Great for commuting or leisure rides.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a set of camping gear including a tent, sleeping bag, and backpack" height="400" src="https://storage.googleapis.com/a1aa/image/jlSxN4U5R8pBMJPtQILaK60QCY4Q9xJTd6rXprEPym0T7h8E.jpg" width="600"/>
+       <h3>
+        Camping Gear
+       </h3>
+       <p>
+        Complete set of camping gear available. Includes tent, sleeping bag, and backpack.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a barbecue grill set up in a backyard" height="400" src="https://storage.googleapis.com/a1aa/image/ODFreWqHEfrzhEdNYzJ6Lbs9isO1pyONTCHWAYSeFD1caPknA.jpg" width="600"/>
+       <h3>
+        Barbecue Grill
+       </h3>
+       <p>
+        High-quality barbecue grill perfect for outdoor cooking and gatherings.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a set of power tools including a saw, drill, and sander" height="400" src="https://storage.googleapis.com/a1aa/image/NdvCWhJkfMV8FShQsR2Vdnw2z8qxS5czokfvpKEtALeSaPknA.jpg" width="600"/>
+       <h3>
+        Power Tools Set
+       </h3>
+       <p>
+        Comprehensive set of power tools for all your construction and repair needs.
+       </p>
+      </div>
+      <div class="resource-item">
+       <img alt="Image of a set of kitchen appliances including a blender, toaster, and mixer" height="400" src="https://storage.googleapis.com/a1aa/image/xep3rzROnqVvfkBGbIn67pegogqdQyeSLe3EUNplr8eJS7h8E.jpg" width="600"/>
+       <h3>
+        Kitchen Appliances
+       </h3>
+       <p>
+        Various kitchen appliances available for sharing. Includes blender, toaster, and mixer.
+       </p>
+      </div>
+     </div>
+    </section>
+    <section class="mt-8" id="add-resource">
+     <h2 class="text-2xl font-bold mb-4">
+      Add a Resource
+     </h2>
+     <form id="add-resource-form">
+      <div class="mb-4">
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="resource-name">
+        Resource Name
+       </label>
+       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="resource-name" name="resource-name" required="" type="text"/>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="resource-description">
+        Description
+       </label>
+       <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="resource-description" name="resource-description" required=""></textarea>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="resource-image">
+        Image URL
+       </label>
+       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="resource-image" name="resource-image" required="" type="url"/>
+      </div>
+      <div class="flex items-center justify-between">
+       <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Add Resource
+       </button>
+      </div>
+     </form>
+    </section>
+    <section class="mt-8" id="about">
+     <h2 class="text-2xl font-bold mb-4">
+      About Us
+     </h2>
+     <p class="mb-4">
+      Welcome to the Household Resource Sharing Hub! Our mission is to create a community where neighbors can share resources, reduce waste, and save money. Whether you need a tool for a DIY project, equipment for a special event, or just want to borrow something for a short period, our platform makes it easy to find and share resources.
+     </p>
+     <p>
+      We believe in the power of community and the positive impact of sharing. Join us in building a more sustainable and connected neighborhood.
+     </p>
+    </section>
+    <section class="mt-8" id="contact">
+     <h2 class="text-2xl font-bold mb-4">
+      Contact Us
+     </h2>
+     <p class="mb-4">
+      If you have any questions, suggestions, or need assistance, feel free to reach out to us. We're here to help!
+     </p>
+     <p>
+      <strong>
+       Email:
+      </strong>
+      support@householdhub.com
+     </p>
+     <p>
+      <strong>
+       Phone:
+      </strong>
+      (123) 456-7890
+     </p>
+     <p>
+      <strong>
+       Address:
+      </strong>
+      123 Community Lane, Neighborhood City, NC 12345
+     </p>
+    </section>
+   </div>
+   <footer class="footer">
+    <p>
+     © 2024 Household Resource Sharing Hub. All rights reserved.
+    </p>
+   </footer>
+  </div>
+  <script>
+   document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'user' && password === 'password') {
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+
+        document.getElementById('add-resource-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const resourceName = document.getElementById('resource-name').value;
+            const resourceDescription = document.getElementById('resource-description').value;
+            const resourceImage = document.getElementById('resource-image').value;
+
+            const resourceList = document.querySelector('.resource-list');
+            const newResourceItem = document.createElement('div');
+            newResourceItem.classList.add('resource-item');
+
+            const newResourceImage = document.createElement('img');
+            newResourceImage.src = resourceImage;
+            newResourceImage.alt = `Image of ${resourceName}`;
+            newResourceItem.appendChild(newResourceImage);
+
+            const newResourceTitle = document.createElement('h3');
+            newResourceTitle.textContent = resourceName;
+            newResourceItem.appendChild(newResourceTitle);
+
+            const newResourceDescription = document.createElement('p');
+            newResourceDescription.textContent = resourceDescription;
+            newResourceItem.appendChild(newResourceDescription);
+
+            resourceList.appendChild(newResourceItem);
+
+            document.getElementById('add-resource-form').reset();
+        });
+  </script>
+ </body>
+</html>
